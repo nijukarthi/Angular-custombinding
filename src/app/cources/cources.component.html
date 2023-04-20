@@ -1,0 +1,36 @@
+
+<app-search></app-search>
+<app-filter></app-filter>
+<div class="container text-center mt-5">
+    <div class="row" style="width:80%;margin:5px auto">
+      <div class="col" *ngFor="let row of cources" >
+        <div class="card" style="width: 18rem;margin-bottom: 10px;">
+            <img src="../../assets/immg/ang.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title" [ngStyle]="{color:row.courcetype === 'Free' ? 'Green' :'Red'}">{{row.name}}</h5>
+              <p class="card-text">{{row.description}}</p>
+              <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="card-title">${{row.price}}</h5>
+                      </div>
+                      <div class="col">
+                        <h5 class="card-title" [ngStyle]="{color:row.courcetype === 'Free' ? 'Green' : 'Red'}">{{row.courcetype}}</h5>
+                      </div>
+                </div>
+                
+              </div>
+              
+              <a href="#" class="btn btn-secondary" [ngStyle]="{color:row.courcetype === 'Free' ? 'Green' : 'Red', background:row.courcetype === 'Free'?'Black' : 'Black'}">Buy Now</a> &nbsp;
+              <a href="#" class="btn btn-primary">Show Details</a>
+            </div>
+        </div>
+      </div>
+      <div class="col">
+            
+      </div>
+      <div class="col">
+        Column
+      </div>
+    </div>
+  </div>
